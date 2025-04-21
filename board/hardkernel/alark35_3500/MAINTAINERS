@@ -1,5 +1,5 @@
 ALARK35-3500
-M:	Jonas Karlman <jonas@kwiboo.se>
+M:	Steven Liu <stevenliuit@gmail.com>
 S:	Maintained
 F:	board/hardkernel/alark35_3500/
 F:	include/configs/alark35_3500.h
