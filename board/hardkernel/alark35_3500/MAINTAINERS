@@ -1,0 +1,8 @@
+ALARK35-3500
+M:	Jonas Karlman <jonas@kwiboo.se>
+S:	Maintained
+F:	board/hardkernel/alark35_3500/
+F:	include/configs/alark35_3500.h
+F:	configs/alark35-3500-rk3568_defconfig
+F:	arch/arm/dts/rk3568-alark35-3500.dts
+F:	arch/arm/dts/rk3568-alark35-3500-u-boot.dtsi

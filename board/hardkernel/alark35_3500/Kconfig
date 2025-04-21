@@ -1,0 +1,12 @@
+if TARGET_ALARK35_3500_RK3568
+
+config SYS_BOARD
+	default "alark35_3500"
+
+config SYS_VENDOR
+	default "hardkernel"
+
+config SYS_CONFIG_NAME
+	default "alark35_3500"
+
+endif

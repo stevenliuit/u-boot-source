@@ -125,6 +125,7 @@ List of mainline supported Rockchip boards:
      - Radxa E25 Carrier Board (radxa-e25-rk3568)
      - Radxa ROCK 3A (rock-3a-rk3568)
      - Radxa ROCK 3B (rock-3b-rk3568)
+     - Hardkernel ALARK35-3500 (alark35-3500-rk3568)
 
 * rk3588
      - ArmSoM Sige7 (sige7-rk3588)

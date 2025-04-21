@@ -60,6 +60,10 @@ config TARGET_ORANGEPI_3B_RK3566
 	help
 	  Xunlong Orange Pi 3B single board computer with a RK3566 SoC.
 
+config TARGET_ALARK35_3500_RK3568
+	bool "ALARK35-3500"
+	help
+	  Hardkernel ALARK35-3500 single board computer with a RK3568B2 SoC.
 endchoice
 
 config ROCKCHIP_BOOT_MODE_REG
