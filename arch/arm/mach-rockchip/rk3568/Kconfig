@@ -83,6 +83,7 @@ config TEXT_BASE
 
 source "board/rockchip/evb_rk3568/Kconfig"
 source "board/anbernic/rgxx3_rk3566/Kconfig"
+source "board/hardkernel/alark35_3500/Kconfig"
 source "board/hardkernel/odroid_m1/Kconfig"
 source "board/hardkernel/odroid_m1s/Kconfig"
 source "board/pine64/quartz64_rk3566/Kconfig"
