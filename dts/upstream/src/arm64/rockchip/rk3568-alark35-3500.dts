@@ -37,10 +37,10 @@
 		u-boot,dm-spl;
 		status = "okay";
 
-		volumeup-key {
+		button-up {
 			u-boot,dm-spl;
+			label = "Volume Up";
 			linux,code = <KEY_VOLUMEUP>;
-			label = "volume up";
 			press-threshold-microvolt = <9>;
 		};
 	};
