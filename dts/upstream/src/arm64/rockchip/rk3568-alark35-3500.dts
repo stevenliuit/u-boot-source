@@ -29,7 +29,7 @@
 		stdout-path = "serial2:1500000n8";
 	};
 
-	adc-keys {
+	adc_keys: adc-keys {
 		compatible = "adc-keys";
 		io-channels = <&saradc 0>;
 		io-channel-names = "buttons";
@@ -44,7 +44,7 @@
 			press-threshold-microvolt = <9>;
 		};
 	};
-	
+
 	dc_12v: regulator-dc-12v {
 		compatible = "regulator-fixed";
 		regulator-name = "dc_12v";
