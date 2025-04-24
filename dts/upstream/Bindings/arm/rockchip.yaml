@@ -647,7 +647,7 @@ properties:
 
       - description: Hardkernel Alark35 3500
         items:
-          - const: hardkernel,alark-3500
+          - const: hardkernel,alark35-3500
           - const: rockchip,rk3568
 
       - description: Hardkernel Odroid M1S
