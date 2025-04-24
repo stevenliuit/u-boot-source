@@ -248,9 +248,6 @@
 	};*/
 
 };
-&xpcs {
-	status = "okay";
-};
 //50M时钟
 /*
 &gmac1_clkin {
