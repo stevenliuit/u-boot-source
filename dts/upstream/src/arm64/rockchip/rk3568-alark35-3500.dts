@@ -39,6 +39,17 @@
 		regulator-max-microvolt = <12000000>;
 	};
 
+	gpio-keys {
+		compatible = "gpio-keys";
+		autorepeat;
+		pinctrl-names = "default";
+
+		vol-up-key {
+			gpios = <&gpio0 0x1e 0x1>;
+			label = "volume up";
+			linux,code = <0x73>;
+		};
+	};
 	hdmi-con {
 		compatible = "hdmi-connector";
 		type = "a";
@@ -539,7 +550,7 @@
 				<1 RK_PD2 1 &pcfg_pull_none>;
 		};
 	};
-
+	
 	ir-receiver {
 		ir_receiver_pin: ir-receiver-pin {
 			/* external pullup to VCC3V3_SYS */
