@@ -160,6 +160,12 @@
 		regulator-max-microvolt = <5000000>;
 		vin-supply = <&vcc5v0_sys>;
 	};
+       gmac1_clkin: external-gmac1-clock {
+		compatible = "fixed-clock";
+		clock-frequency = <50000000>;
+		clock-output-names = "gmac1_clkin";
+		#clock-cells = <0x0>;
+	};
         qsgmii_3v3: gpio-regulator {
 		compatible = "regulator-gpio";
 		regulator-name = "qsgmii_3v3";
