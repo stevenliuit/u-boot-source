@@ -4,4 +4,5 @@ S:	Maintained
 F:	board/hardkernel/zgl_m3568/
 F:	include/configs/zgl_m3568.h
 F:	configs/zgl-m3568-rk3568_defconfig
+F:	arch/arm/dts/rk3568-zgl-m3568.dts
 F:	arch/arm/dts/rk3568-zgl-m3568-u-boot.dtsi
