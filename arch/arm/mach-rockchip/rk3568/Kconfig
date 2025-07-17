@@ -64,6 +64,12 @@ config TARGET_ALARK35_3500_RK3568
 	bool "ALARK35-3500"
 	help
 	  Hardkernel ALARK35-3500 single board computer with a RK3568B2 SoC.
+
+config TARGET_ZGL_M3568_RK3568
+	bool "ZGL-M3568"
+	help
+	  Hardkernel ZGL-M3568 single board computer with a RK3568B2 SoC.
+
 endchoice
 
 config ROCKCHIP_BOOT_MODE_REG

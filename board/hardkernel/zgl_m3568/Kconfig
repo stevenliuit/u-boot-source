@@ -1,0 +1,12 @@
+if TARGET_ZGL_M3568_RK3568
+
+config SYS_BOARD
+	default "zgl_m3568"
+
+config SYS_VENDOR
+	default "hardkernel"
+
+config SYS_CONFIG_NAME
+	default "zgl_m3568"
+
+endif
