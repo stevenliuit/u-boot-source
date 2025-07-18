@@ -11,6 +11,9 @@
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/pinctrl/rockchip.h>
 #include <dt-bindings/pwm/pwm.h>
+#include <dt-bindings/leds/common.h>
+#include <dt-bindings/soc/rockchip,vop2.h>
+#include "rk3568.dtsi"
 
 / {
 	model = "Rockchip RK3568 EVB1 DDR4 V10 Board";
@@ -980,7 +983,7 @@
 	};
 };
 
-/* 预留 暂时不用
+/*
 &vp0 {
 	cursor-win-id = <ROCKCHIP_VOP2_CLUSTER0>;
 };
@@ -989,18 +992,6 @@
 	cursor-win-id = <ROCKCHIP_VOP2_CLUSTER1>;
 };
 */
-&hdmi_in {
-	hdmi_in_vp0: endpoint {
-		remote-endpoint = <&vp0_out_hdmi>;
-	};
-};
-
-&hdmi_out {
-	hdmi_tx_out: endpoint {
-		remote-endpoint = <&hdmi_tx_in>;
-	};
-};
-
 //vop0
 &hdmi {
 	status = "okay";
@@ -1015,6 +1006,129 @@
 
 &hdmi_in_vp0 {
 	status = "okay";
+};
+
+&hdmi_in_vp1 {
+	status = "disabled";
+};
+
+&route_hdmi {
+	status = "okay";
+	connect = <&vp0_out_hdmi>;
+};
+
+
+//vop1
+&edp {
+	hpd-gpios = <&gpio0 RK_PC2 GPIO_ACTIVE_HIGH>;
+	status = "okay";
+};
+
+&edp_phy {
+	status = "okay";
+};
+
+&edp_in_vp0 {
+	status = "disabled";
+};
+
+&edp_in_vp1 {
+	status = "okay";
+};
+
+&route_edp {
+	connect = <&vp1_out_edp>;	
+	status = "okay";
+};
+
+&csi2_dphy_hw {
+	status = "okay";
+};
+
+&csi2_dphy0 {
+	status = "okay";
+
+	ports {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		port@0 {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <0>;
+			csi_dphy1_in: endpoint@1 {
+				remote-endpoint = <&ucam_out1>;
+				data-lanes = <1 2 3 4>;
+			};
+		};
+		port@1 {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <1>;
+			csi_dphy1_out: endpoint@0 {
+				remote-endpoint = <&mipi_csi2_in>;
+				data-lanes = <1 2 3 4>;
+			};
+		};
+	};
+};
+
+&mipi_csi2 {
+	status = "okay";
+	ports {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		
+		port@0 {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <0>;			
+			mipi_csi2_in: endpoint@1 {
+				remote-endpoint = <&csi_dphy1_out>;
+				data-lanes = <1 2 3 4>;
+			};
+		};
+		port@1 {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <1>;			
+			mipi_csi2_out: endpoint@0 {
+				remote-endpoint = <&cif_mipi_lvds_in>;
+				data-lanes = <1 2 3 4>;
+			};
+		};
+	};
+};
+
+&rkcif {
+	status = "okay";
+};
+
+&rkcif_mmu {
+	status = "okay";
+};
+
+&rkcif_dvp {
+	status = "okay";
+};
+
+&rkcif_mipi_lvds {
+	status = "okay";
+	port {
+		cif_mipi_lvds_in: endpoint {
+			remote-endpoint = <&mipi_csi2_out>;
+			data-lanes = <1 2 3 4>;
+		};
+	};	
+};
+
+&rkcif_mipi_lvds_sditf {
+	status = "disabled";
+	port {
+		mipi_lvds_sditf: endpoint {
+			//remote-endpoint = <&isp1_in>;
+			data-lanes = <1 2 3 4>;
+		};
+	};	
 };
 
 &can0 {
