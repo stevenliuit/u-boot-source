@@ -703,6 +703,24 @@
 	status = "okay";
 };
 
+&usbdrd_dwc3 {
+	dr_mode = "otg";
+	extcon = <&usb2phy0>;
+	status = "okay";
+};
+
+&usbdrd30 {
+	status = "okay";
+};
+
+&usbhost_dwc3 {
+	status = "okay";
+};
+
+&usbhost30 {
+	status = "okay";
+};
+/* 去掉了 usb3 因为此设备树 在batocera的rk3568.dtsi uboot中没有
 &usbdrd3_0 {
 	extcon = <&usb2phy0>;
 	status = "okay";
@@ -725,7 +743,7 @@
 &vdpu_mmu {
 	status = "okay";
 };
-
+*/
 &vepu {
 	status = "okay";
 };
