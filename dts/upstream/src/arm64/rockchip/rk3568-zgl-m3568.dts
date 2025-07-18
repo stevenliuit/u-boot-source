@@ -7,6 +7,7 @@
 /dts-v1/;
 #include "rk3568.dtsi"
 
+#include <dt-bindings/clock/rk3568-cru.h>
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/pinctrl/rockchip.h>
 #include <dt-bindings/pwm/pwm.h>
@@ -249,13 +250,6 @@
 	};
 };
 
-
-&bus_npu {
-	bus-supply = <&vdd_logic>;
-	pvtm-supply = <&vdd_cpu>;
-	status = "okay";
-};
-
 &can0 {
 	assigned-clocks = <&cru CLK_CAN0>;
 	assigned-clock-rates = <150000000>;
@@ -285,11 +279,6 @@
 };
 
 &dfi {
-	status = "okay";
-};
-
-&dmc {
-	center-supply = <&vdd_logic>;
 	status = "okay";
 };
 
