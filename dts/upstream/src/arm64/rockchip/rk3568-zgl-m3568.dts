@@ -560,7 +560,7 @@
 			compatible = "rockchip,rk809-codec", "rockchip,rk817-codec";
 			clocks = <&cru 419>;
 			clock-names = "mclk";
-			assigned-clocks = <&cru 419>, <&cru I2S1_MCLK_TX_IOE>;
+			assigned-clocks = <&cru 419>, <&cru 422>;
 			assigned-clock-rates = <12288000>;
 			assigned-clock-parents = <&cru I2S1_MCLKOUT_TX>, <&cru I2S1_MCLKOUT_TX>;
 			pinctrl-names = "default";
