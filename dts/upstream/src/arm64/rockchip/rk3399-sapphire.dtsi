@@ -619,12 +619,13 @@
 };
 
 &usbdrd3_0 {
+	extcon = <&fusb0>;
 	status = "okay";
 };
 
 &usbdrd_dwc3_0 {
+	dr_mode = "otg";
 	status = "okay";
-	dr_mode = "host";
 };
 
 &usbdrd3_1 {
@@ -632,8 +633,8 @@
 };
 
 &usbdrd_dwc3_1 {
-	status = "okay";
 	dr_mode = "host";
+	status = "okay";
 };
 
 &vopb {

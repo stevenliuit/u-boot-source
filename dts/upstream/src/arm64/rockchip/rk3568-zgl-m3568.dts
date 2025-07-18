@@ -582,26 +582,6 @@
 		     &i2s1m0_sdi0
 		     &i2s1m0_sdo0>;
 };
-
-&iep {
-	status = "okay";
-};
-
-&iep_mmu {
-	status = "okay";
-};
-
-&jpegd {
-	status = "okay";
-};
-
-&jpegd_mmu {
-	status = "okay";
-};
-
-&mpp_srv {
-	status = "okay";
-};
  /*
   * There are 10 independent IO domains in RK3566/RK3568, including PMUIO[0:2] and VCCIO[1:7].
   * 1/ PMUIO0 and PMUIO1 are fixed-level power domains which cannot be configured;
@@ -643,36 +623,6 @@
 	status = "okay";
 };
 
-&rk_rga {
-	status = "okay";
-};
-
-&rkvdec {
-	status = "okay";
-};
-
-&rkvdec_mmu {
-	status = "okay";
-};
-
-&rkvenc {
-	venc-supply = <&vdd_logic>;
-	status = "okay";
-};
-
-&rkvenc_mmu {
-	status = "okay";
-};
-
-&rknpu {
-	rknpu-supply = <&vdd_npu>;
-	status = "okay";
-};
-
-&rknpu_mmu {
-	status = "okay";
-};
-
 &saradc {
 	status = "okay";
 	vref-supply = <&vcca_1v8>;
@@ -709,22 +659,22 @@
 	status = "okay";
 };
 
-&u2phy0_host {
+&usb2phy0_host {
 	phy-supply = <&vcc5v0_host>;
 	status = "okay";
 };
 
-&u2phy0_otg {
+&usb2phy0_otg {
 	vbus-supply = <&vcc5v0_otg>;
 	status = "okay";
 };
 
-&u2phy1_host {
+&usb2phy1_otg {
 	phy-supply = <&vcc5v0_host>;
 	status = "okay";
 };
 
-&u2phy1_otg {
+&usb2phy1_otg {
 	phy-supply = <&vcc5v0_host>;
 	status = "okay";
 };
@@ -753,32 +703,22 @@
 	status = "okay";
 };
 
-&usbdrd_dwc3 {
-	dr_mode = "otg";
+&usbdrd3_0 {
 	extcon = <&usb2phy0>;
 	status = "okay";
 };
 
-&usbdrd30 {
+&usbdrd_dwc3_0 {
+	dr_mode = "otg";
 	status = "okay";
 };
 
-&usbhost_dwc3 {
+&usbdrd3_1 {
 	status = "okay";
 };
 
-&usbhost30 {
-	status = "okay";
-};
-
-&vad {
-	rockchip,audio-src = <&i2s1_8ch>;
-	rockchip,buffer-time-ms = <128>;
-	rockchip,det-channel = <0>;
-	rockchip,mode = <0>;
-};
-
-&vdpu {
+&usbdrd_dwc3_1 {
+	dr_mode = "host";
 	status = "okay";
 };
 
@@ -803,15 +743,15 @@
 &vop_mmu {
 	status = "okay";
 };
-&combphy0_us {
+&combphy0 {
 	status = "okay";
 };
 
-&combphy1_usq {
+&combphy1 {
 	status = "okay";
 };
 
-&combphy2_psq {
+&combphy2 {
 	status = "okay";
 };
 
