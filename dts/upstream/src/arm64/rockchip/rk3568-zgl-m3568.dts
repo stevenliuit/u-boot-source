@@ -702,7 +702,7 @@
 &usb_host1_ohci {
 	status = "okay";
 };
-
+/* 去掉了 usb3 因为此设备树 在batocera的rk3568.dtsi uboot中没有
 &usbdrd_dwc3 {
 	dr_mode = "otg";
 	extcon = <&usb2phy0>;
@@ -720,7 +720,7 @@
 &usbhost30 {
 	status = "okay";
 };
-/* 去掉了 usb3 因为此设备树 在batocera的rk3568.dtsi uboot中没有
+
 &usbdrd3_0 {
 	extcon = <&usb2phy0>;
 	status = "okay";
